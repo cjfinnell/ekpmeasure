@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2.4.0
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '>=3.6'
+    - name: Run flake8
+      uses: julianwachholz/flake8-action@v2
+      with:
+        checkName: lint
+        path: src/
