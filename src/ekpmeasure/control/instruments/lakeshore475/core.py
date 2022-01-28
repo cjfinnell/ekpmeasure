@@ -1,12 +1,13 @@
-__all__ = ('measure_field',)
+__all__ = ("measure_field",)
+
 
 def measure_field(gaussmeter):
-	"""Measure the field.
+    """Measure the field.
 
-	args:
-		gaussmeter (pyvisa.resources.gbib.GPIBInstrument): Lakeshore 475
+    args:
+            gaussmeter (pyvisa.resources.gbib.GPIBInstrument): Lakeshore 475
 
 
-	"""
-	field = float(gaussmeter.query('RDGFIELD?').split('\r')[0])
-	return field
+    """
+    field = float(gaussmeter.query("RDGFIELD?").split("\r")[0])
+    return field

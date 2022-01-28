@@ -1,24 +1,29 @@
 import os
 
-__all__ = ('install', )
+__all__ = ("install",)
 
-def install( _dir, name='App.ipynb',):
 
-	if name[-6:] != '.ipynb':
-		name += '.ipynb'
+def install(
+    _dir,
+    name="App.ipynb",
+):
 
-	print('Creating {}'.format(name))
+    if name[-6:] != ".ipynb":
+        name += ".ipynb"
 
-	lines = _copy(_dir=_dir)
+    print("Creating {}".format(name))
 
-	with open(os.path.join(os.getcwd(), name), 'wb') as f:
-		f.writelines(lines)
+    lines = _copy(_dir=_dir)
 
-	return
+    with open(os.path.join(os.getcwd(), name), "wb") as f:
+        f.writelines(lines)
+
+    return
+
 
 def _copy(_dir):
-	# get the most current version of App.ipynb and write to variable
-	with open(os.path.join(_dir, '_notebook.ipynb'), 'rb') as f:
-		lines = f.readlines()
+    # get the most current version of App.ipynb and write to variable
+    with open(os.path.join(_dir, "_notebook.ipynb"), "rb") as f:
+        lines = f.readlines()
 
-	return lines
+    return lines
